@@ -1,0 +1,49 @@
+My name is Awais Raza and I am student at NUST in Department of Electrical Engineering. Studying in NUST was a great 
+experience and I enjoyed studying here. Now I think I will choose my career path in Machine Learning and Artificial Intelligence which make me very attractive and now a days I am learning Machine Learning and I will do some solid projects before ending of my summer vacations InshAllah.
+
+
+
+import SwiftUI
+
+@main
+struct OverviewApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}
+
+struct ContentView: View {
+    var speed = 62;
+    var tachometer = 2000;
+    var fuel_gauge = 85;
+
+    var engine_temperature = 212;
+    var cabin_temperature = 72;
+    var outside_temperature = 88;
+    
+    var body: some View {
+        NavigationView {
+            List {
+                Section(header: Text("Dashboard")) {
+                    Text("Speed: \(speed) mph")
+                    Text("Tachometer: \(tachometer) RPM")
+                    Text("Fuel Gauge: \(fuel_gauge)%")
+                }
+                Section(header: Text("Temperature")) {
+                    Text("Engine: \(engine_temperature) °F")
+                    Text("Cabin: \(cabin_temperature) °F")
+                    Text("Outside: \(outside_temperature) °F")
+                }
+            }
+            .navigationTitle("Vehicle Overview")        .navigationBarTitleDisplayMode(.inline)
+        }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
